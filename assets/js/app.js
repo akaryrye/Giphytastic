@@ -21,7 +21,7 @@ function createImageElement(target, src, title) {
 // save input value to a variable
 submit.addEventListener('click', function () {
     let topic = input.value;
-    url = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&limit=5&api_key=" + apiKey;
+    url = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&limit=5&api_key=" + apiKey;
     fetch(url)
     .then((data) => data.json())
     .then(function(data) {
