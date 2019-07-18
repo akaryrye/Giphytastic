@@ -1,0 +1,9 @@
+body {
+    background-color: teal;
+}
+
+.btn {
+    background-color: red;
+    height: 50px;
+    width: 150px;
+}
