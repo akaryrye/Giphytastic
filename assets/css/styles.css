@@ -7,3 +7,24 @@ body {
     height: 50px;
     width: 150px;
 }
+
+#images {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+]\
+.image {
+    width: 300px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.images img {
+    width: 100%;
+    margin: auto;
+    border-radius: 25px;
+}

@@ -1,27 +1,35 @@
-    
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    <!-- META-TAGS / BOOTSTRAP / CSS  -->
-    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <title>Giphytastic!!!</title>
+	<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<title>Giphytastic!!!</title>
 </head>
+
 <body>
 
-    <div id="user-input">
-        <input type="text" id="search"></input>
-        <button type="submit" id="submit">SUBMIT</button>
-    </div>
+	<!-- User Text input and submit button -->
+	<div id="user-input">
+		<h3>Search for Gifs:</h3>
+		<input type="text" id="search"></input>
+		<input id="imgQuantity" type="range" min="1" max="15" value="5" class="slider" id="myRange">
+		<div id="quantityDisp"></div>
+		<button type="submit" id="submit">SUBMIT</button>
+	</div>
 
-    <div id="buttons"></div>
-
-    <div id="images"></div>
+	<!-- When user searches, a quick search button appears here -->
+	<h4>buttons go here:</h4>
+	<div id="buttons"></div>
+	
+	<!-- where the images go -->
+	<div id="img_container">
+		<h4>Gifs appear here:</h4>
+		<div id="images"></div>
+	</div>
 
 </body>
 
-<!-- JAVASCRIPT  -->
-    <script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
 </html>
