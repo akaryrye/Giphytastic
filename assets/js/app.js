@@ -23,11 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let quantityDisp = document.getElementById("quantityDisp");
 
     // Define how each image is rendered:
-    function createImageElement(target, src, title) {   
+    function createImageElement(target, still, animate, title) {   
         let newImg = document.createElement("img");
         let imgDiv = document.createElement("div");
+        newImg.setAttribute('src', still);
+        newImg.setAttribute('class', 'gif');
+        newImg.setAttribute('still', still);
+        newImg.setAttribute('animate', animate);
         newImg.setAttribute('alt', title);
-        newImg.setAttribute('src', src);
         imgDiv.setAttribute('class', 'image');
         imgDiv.appendChild(newImg);
         images.appendChild(imgDiv)
@@ -40,7 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url).then((obj) => obj.json())
             .then(function(obj) {
                 for (let i = 0; i < obj.data.length; i++) {
-                    createImageElement(images, obj.data[i].images.downsized.url, obj.data[i].title) 
+                    createImageElement(
+                        images, 
+                        obj.data[i].images.fixed_width_small_still.url, obj.data[i].images.fixed_width.url, 
+                        obj.data[i].title) 
                 };
             }); 
     }
@@ -80,19 +86,34 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!btnArray.includes(topic)) {
             btnArray.push(topic);
         }
+        // save to cache for next page load
         localStorage.setItem('btnArray', (JSON.stringify(btnArray)));
         console.log(topic);
         populateImages(topic);
         createButtons(btnArray);
     })
 
-    // when buttons are clicked, load images on that topic:
+    
     document.addEventListener('click', function(e) {
+        
+        // when the buttons are clicked, hit API and load images:
         if (e.target.getAttribute('class') == 'btn') {
             let index = e.target.getAttribute('data');
             topic = btnArray[index];
             console.log(index, topic);
             populateImages(topic);
+        }
+
+        // When images are clicked, toggle still/animated
+        else if (e.target.getAttribute('class') === 'gif') {
+            let animate = e.target.getAttribute('animate');
+            let still = e.target.getAttribute('still');
+
+            if (e.target.getAttribute('src') === still) {
+                e.target.setAttribute('src', animate)
+            } else {
+                e.target.setAttribute('src', still)
+            }
         }
     });
 
