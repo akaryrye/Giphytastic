@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 0; i < obj.data.length; i++) {
                     createImageElement(
                         images, 
-                        obj.data[i].images.fixed_width_small_still.url, obj.data[i].images.fixed_width.url, 
+                        obj.data[i].images.fixed_width_still.url, 
+                        obj.data[i].images.fixed_width.url, 
                         obj.data[i].title) 
                 };
             }); 

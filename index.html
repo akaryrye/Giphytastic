@@ -9,27 +9,29 @@
 </head>
 
 <body>
-
+	
 	<!-- User Text input and submit button -->
 	<div id="user-input">
-		<h3>Search for Gifs:</h3>
-		<input type="text" id="search"></input>
-		<input id="imgQuantity" type="range" min="1" max="15" value="5" class="slider" id="myRange">
-		<div id="quantityDisp"></div>
-		<button type="submit" id="submit">SUBMIT</button>
+		<h1 id="title">Giphytastic!</h3>
+		<div id="search-container">
+			<input type="text" id="search" placeholder='Search'></input>
+			<button type="submit" id="submit">SUBMIT</button>
+		</div>
+		<div id="quantity-adj">
+			<h3> Number of images: </h3>
+			<input id="imgQuantity" type="range" min="1" max="15" value="10" class="slider" id="myRange">
+			<div id="quantityDisp">10</div>
+		</div>
+		
+		
 	</div>
 
 	<!-- When user searches, a quick search button appears here -->
-	<h4>buttons go here:</h4>
 	<div id="buttons"></div>
 	
 	<!-- where the images go -->
-	<div id="img_container">
-		<h4>Gifs appear here:</h4>
-		<div id="images"></div>
-	</div>
+	<div id="images"></div>
 
 </body>
-
 <script type="text/javascript" src="assets/js/app.js"></script>
 </html>

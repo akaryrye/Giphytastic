@@ -1,22 +1,81 @@
 body {
-    background-color: teal;
+    background-color: #a3b1ff;
+}
+
+#user-input {
+    background-color: #8288aa;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 30px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#title {
+    text-align: center;
+    color: #002857;
+    font-weight: bold;
+}
+
+#search-container {
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+#search {
+    width: 250px;
+    height: 30px;
+    margin: 0 30px;
+}
+
+#quantity-adj {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+
+#quantityDisp {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 7px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .btn {
-    background-color: red;
-    height: 50px;
-    width: 150px;
+    color: #8288aa;
+    background-color: #003249;
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    border: 3px solid black;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+
 }
 
 #images {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     border-top: 5px solid black;
     border-bottom: 5px solid black;
+    margin: 20px 0;
 }
-]\
+
 .image {
     width: 300px;
     margin: 10px;
@@ -27,4 +86,63 @@ body {
     width: 100%;
     margin: auto;
     border-radius: 25px;
+}
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 25px;
+    width: 220px;
+    border-radius: 0; /* iOS */
+}
+
+
+/* the following is for the slider, coded by Noah Blon */
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 25px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    border: 1px solid black;
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #929191;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw #4e9ce9;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: dodgerblue;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
 }
